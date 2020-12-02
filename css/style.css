@@ -1,0 +1,468 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial;
+  background: url("/ATM_project/img/back.jpg");
+}
+
+.header {
+  text-align: center;
+  position: relative;
+}
+
+.nav-link,
+.navbar-brand {
+  cursor: pointer;
+}
+
+.nav-link {
+  margin-right: 1em !important;
+}
+
+.navbar-collapse {
+  justify-content: center;
+}
+
+.overlay {
+  position: absolute;
+  min-height: 100%;
+  min-width: 100%;
+  left: 0;
+  top: 0;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.description {
+  left: 50%;
+  position: absolute;
+  top: 55%;
+  transform: translate(-50%, -55%);
+  align-content: center;
+}
+
+p{
+  font-family: DFMincho-UB;
+  font-size: 100%;
+  font-weight: normal;
+  color: #F28338;
+  font-style: italic;
+
+}
+
+footer {
+  padding: 20px;
+  text-align: center;
+  background: url("/ATM_project/img/woodblack.jpg");
+  margin-top: 20px;
+  position: relative;
+}
+
+.glow-on-hover {
+  width: 220px;
+  height: 50px;
+  border: none;
+  outline: none;
+  color: white;
+  background: #111;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+}
+
+.glow-on-hover:before {
+  content: '';
+  background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+  position: absolute;
+  top: -2px;
+  left:-2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing 20s linear infinite;
+  opacity: 0;
+  transition: opacity .3s ease-in-out;
+  border-radius: 10px;
+}
+
+.glow-on-hover:active {
+  color: #000
+}
+
+.glow-on-hover:active:after {
+  background: transparent;
+}
+
+.glow-on-hover:hover:before {
+  opacity: 1;
+}
+
+.glow-on-hover:after {
+  z-index: -1;
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #111;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+
+@keyframes glowing {
+  0% { background-position: 0 0; }
+  50% { background-position: 400% 0; }
+  100% { background-position: 0 0; }
+}
+
+.containerimage {
+  display: flex;
+  width: 100%;
+  padding: 4% 2%;
+  box-sizing: border-box;
+  height: 100vh;
+}
+
+.box {
+  flex: 1;
+  overflow: hidden;
+  transition: .5s;
+  margin: 0 1%;
+  box-shadow: 0 20px 30px rgba(0,0,0,.1);
+  line-height: 0;
+}
+
+.box > img {
+  width: 200%;
+  height: calc(100% - 10vh);
+  object-fit: cover; 
+  transition: .5s;
+}
+
+.box > span {
+  font-size: 3.1vh;
+  display: block;
+  text-align: center;
+  height: 10vh;
+  line-height: 2.6;
+}
+
+.box:hover { flex: 1 1 50%; }
+.box:hover > img {
+  width: 100%;
+  height: 100%;
+}
+
+ .test{
+  display: inline
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  text-align: center;
+  background: url("/ATM_project/img/woodblack.jpg");
+}
+
+.testsmal{
+  display: inline
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 240px;
+  text-align: center;
+  background: url("/ATM_project/img/woodblack.jpg");
+}
+
+.imgcard{
+  margin-left: auto;
+  margin-right: auto
+  }
+
+.card1 { 
+  width: 800px; 
+  font-size: 17pt;
+  color: #FFA850;
+  text-indent: 1.5em;
+  position: relative;
+  font-family:cursive;
+}
+
+.img11
+{
+  width: 500px;
+  height: 300px;
+  position: relative;
+  float: right;
+  margin-right: 20px;
+  margin-top: 0px;
+}
+
+.card2{
+  width: 600px; 
+  font-size: 15pt;
+  text-align: center;
+  position: absolute;
+  margin-left: 650px;
+  margin-top: 100px;
+}
+
+.zoom:hover {
+  -ms-transform: scale(1.1);
+  -webkit-transform: scale(1.1); 
+  transform: scale(1.1); 
+}
+
+.ingredients{
+  font-family: arial;
+  font-size: 100%;
+  font-weight: normal;
+  color: #FFA850;
+  font-style: italic;
+}
+
+section {
+  padding: 7px ;
+  margin-top: 15px;
+  margin-left: 410px;
+  margin-right: 410px;
+  background-image: url("/ATM_project/img/woodblack.jpg");
+  box-shadow: 0 0 10px rgba(255,141,13,1.5); 
+
+}
+/*Заголовок реєстрації/автор */
+#regtext{
+  text-align: center;
+  font-family: DFMincho-UB;
+  font-size: 220%;
+  font-weight: normal;
+  text-decoration: underline;
+  color: #F28338;
+  font-style: italic;
+} 
+/*Назви полів*/
+.inlinetxt{
+  white-space: pre;
+  padding-left: 2px;
+      
+}
+
+/* Поле для заповнення */
+input[type=text], input[type=password] {
+  font-family: Сomic Sans MS;
+  font-style: italic;
+  font-weight: normal;
+  color: #cc7722;
+  width: 60%;
+  padding: 4px ;
+  margin: 5px 0 8px 135px;
+  display: inline-block;
+  border: none;
+  background:#a3a19d;
+  
+}
+input[type=text]:focus, input[type=password]:focus {
+  padding: 5px;
+  background-color: #ddd;
+  outline: none;
+  
+}
+.log {
+  display: block;
+  float: left;
+  width: 70px;
+  height: 15px;
+  padding-top: 6px;
+  margin-right: 60px;
+  margin-bottom: 0px;
+  font-family: DFMincho-UB;
+  font-size: 110%;
+  font-weight: normal;
+  color: #F28338;
+  font-style: italic;
+}
+
+/* Кнопка */
+.registerbtn {
+  color: #2b2b2a;
+  padding: 7px;
+  margin-bottom: 10px;
+  border: none;
+  cursor: pointer;
+  width: 40%;
+  opacity: 0.9;
+  position: relative;
+  font-family: Сomic Sans MS;
+  font-style: italic;
+  font-weight: bold;
+  font-size: 18px;
+  text-shadow: 0 -1px 1px #cc5500;
+  outline: none;
+  border-radius: 1px;
+  background: linear-gradient(to left, rgba(0,0,0,.3), rgba(0,0,0,.0) 50%, rgba(0,0,0,.3)), linear-gradient(#d77d31, #fe8417, #d77d31);
+  background-size: 100% 100%, auto;
+  background-position: 50% 50%;
+  box-shadow: inset #f28338 0 -1px 1px, inset 0 1px 1px #ffbf00, #cc7722 0 0 0 1px, #000 0 10px 15px -10px;
+  transition: 0.2s;
+}
+
+.registerbtn:hover {
+  background-size: 140% 100%, auto;
+}
+.registerbtn:active {
+  top: 1px;
+  color: #ffdead;
+  box-shadow: inset #f28338 0 -1px 1px, inset 0 1px 1px #ffbf00, #cc7722 0 0 0 1px, 0 10px 10px -9px #000;
+}
+/* Кнопки-силки */
+.reglink{
+  color: #f28338;
+  text-decoration: underline;
+}
+.reglink:hover{
+  color: #cc7722;
+  text-decoration: underline;
+}
+
+.subbtn{
+ background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 10px;
+  cursor: pointer;
+}
+
+#follow {
+margin: 0px;
+background: e6eeee;
+z-index: 2;
+position: fixed;
+bottom: 0px;
+right: 0px;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+.zagolovok {
+font-family: DFMincho-UB;
+  font-size: 150%;
+  font-weight: normal;
+  color: #F28338;
+  font-style: italic;
+}
+.inbotton{
+font-family: Сomic Sans MS;
+  font-style: italic;
+  font-weight: bold;
+  font-size: 18px;
+  color: black;
+}
+.inbotton:hover{
+font-family: Сomic Sans MS;
+  font-style: italic;
+  font-weight: bold;
+  font-size: 18px;
+  color: orange;
+}
+.updatebttn{
+  background: #F28338;
+  width: 38%;
+  opacity: 0.7;
+  position: relative;
+  font-family: Сomic Sans MS;
+    font-style: italic;
+    font-weight: bold;
+    font-size: 18px;
+    color: black;
+}
+input[type=address] {
+  font-family: Сomic Sans MS;
+  font-style: italic;
+  font-weight: normal;
+  color: #cc7722;
+  width: 99%;
+  padding: 4px ;
+  margin: 5px 0 8px 0px;
+  display: inline-block;
+  border: none;
+  background:#f4c430;
+  opacity: 0.8;
+}
+input[type=address]:focus {
+  padding: 5px;
+  background-color: #f4c430;
+  outline: none;
+ }
+ input[type=amount] {
+   font-family: Сomic Sans MS;
+   font-style: italic;
+   font-weight: normal;
+   color: #cc7722;
+   width: 99%;
+   padding: 4px ;
+   margin: 5px 0 8px 0px;
+   display: inline-block;
+   border: none;
+   background: silver;
+   opacity: 0.8;
+ }
+ input[type=amount]:focus {
+   padding: 5px;
+   background-color: silver;
+   outline: none;
+  }
+ .tdwidth {
+ width: 100%;
+  }
