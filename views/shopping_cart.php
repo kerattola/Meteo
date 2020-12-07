@@ -1,5 +1,5 @@
 <?php
-  
+
    $servername = "localhost";
    $database = "atm_teamdb";
    $username = "root";
@@ -75,30 +75,23 @@ $conn3 = mysqli_connect($servername,$username,$password,$database);
                                     echo $row['amount'];
                                echo "<button type='submit' name='plus[$d_id]'>+</button></td>";
                              ?>
-                             <td><?php echo $row["price"] ?></td>
+                             <td><p><?php echo $row["price"] ?></p></td>
                              <td><?php echo  $subtotal1 ?></td>
                          </tr>
                         <?php
 
-                           }}
+                           }}//else  $ech1='<td class="zagolovok" colspan="4"><p>Страви з меню</p></td>';
 
 
 
-                        $sql2="SELECT t.name, d.price, d.amount, d.coment
+                        $sql2="SELECT t.name, d.price, d.amount, d.coment, d.dish_id
                           FROM  `order_dish` AS o
                           INNER JOIN `dish` AS d ON o.dish_id=d.dish_id
                           INNER JOIN `type_dish` AS t ON d.type=t.id
                           WHERE o.order_id=$id";
                           $query2=mysqli_query($conn3,$sql2);
                               if ($sql2){
-                               $sql2_1="SELECT d.price
-                                                        FROM  `order_dish` AS o
-                                                        INNER JOIN `dish` AS d ON o.dish_id=d.dish_id
-                                                        WHERE o.order_id=$id";
-                               $query2_1=mysqli_query($conn3,$sql2_1);
-                               if($sql2_1){
-                               while($row2=mysqli_fetch_array($query2_1)){
-                               if(!empty($row2["price"]) ){
+
                               $m2='<td  class="zagolovok" colspan="4"><p>Власні страви</p></td>';
                               echo $m2;?>
 
@@ -106,14 +99,14 @@ $conn3 = mysqli_connect($servername,$username,$password,$database);
                                   <th><p>Страва</p></th>
                                   <th><p>Кількість</p></th>
                                    <th><p>Ціна</p></th>
-                                   <th><p>Сума<</th>
+                                   <th><p>Сума</p></th>
                                     </tr>
                                <tr> <?php
                                while($row=mysqli_fetch_array($query2)){
 
                                 $subtotal2=$row["amount"]*$row["price"];
-                                 $totalprice+=$subtotal2;
-
+                                $totalprice+=$subtotal2;
+                                $d2_id = (int)$row['dish_id'];
                                 ?>
 
                                 <td><?php echo "Тип страви: " ?><?php echo $row["name"] ?> <?php echo "." ?>
@@ -125,32 +118,36 @@ $conn3 = mysqli_connect($servername,$username,$password,$database);
                                         echo "Не має коментаря.";
                                         }
                                 ?></td>
-                                  <?php
-                                    echo "<td><button name='minus[$d_id]'>-</button>";
-                                    $amount = (int)$row['amount'];
-                                    if(isset($_POST['plus'])){
-                                    $amount= $amount+1;
-                                      $tania =  (int)key($_POST['plus']);
-                                      $sql5 = "UPDATE order_menudish SET amount= '$amount'
-                                               WHERE order_id=$id AND menudish_id = $tania";
-                                       mysqli_query($conn3, $sql5) or die("Ошибка " . mysqli_error($conn3));
-                                           }
-                                      if(isset($_POST['minus'])&&($row['amount']>1)){
-                                       $amount= $amount-1;
-                                       $ivanka=(int)key($_POST['minus']);
-                                       $sql6 = "UPDATE order_menudish SET amount= '$amount'
-                                               WHERE order_id=$id AND menudish_id = $ivanka";
-                                        mysqli_query($conn3, $sql6) or die("Ошибка " . mysqli_error($conn3));
-                                          }
-                                         echo $row['amount'];
-                                         echo "<button name='plus[$d_id]'>+</button></td>";
-                                                              ?>
+                               <?php
+                               echo "<td><button type='submit' name='minus[$d2_id]'>-</button>";
+                               $amount = (int)$row['amount'];
+                               if(isset($_POST['plus'])){
+                               $amount= $amount+1;
+                               $nastya =  (int)key($_POST['plus']);
+                               $sql5 = "UPDATE dish AS d
+                                        INNER JOIN order_dish AS o ON o.dish_id= d.dish_id
+                                        SET d.amount= '$amount'
+                                         WHERE o.order_id=$id AND d.dish_id =$nastya";
+                               mysqli_query($conn3, $sql5) or die("Ошибка " . mysqli_error($conn3));
+                               }
+                               if(isset($_POST['minus'])&&($row['amount']>1)){
+                               $amount= $amount-1;
+                               $sasha=(int)key($_POST['minus']);
+                               $sql6 = "UPDATE dish AS d
+                                        INNER JOIN order_dish AS o ON o.dish_id= d.dish_id
+                                         SET d.amount= '$amount'
+                                        WHERE o.order_id=$id AND d.dish_id =$sasha";
+                                  mysqli_query($conn3, $sql6) or die("Ошибка " . mysqli_error($conn3));
+                                     }
+                                     echo $row['amount'];
+                                echo "<button type='submit' name='plus[$d2_id]'>+</button></td>";
+                              ?>
                                  <td><?php echo $row["price"] ?></td>
-                                 <td><?php echo  $subtotal2; } }}}}  ?></td>
+                                 <td><?php echo  $subtotal2; }}  ?></td>
                                  </tr>
 
                      <tr>
- 		   <td colspan="4">Підсумкова ціна: <?php echo  $totalprice; echo" грн";   }   ?></td>
+ 		   <td colspan="4">Підсумкова ціна: <?php echo  $totalprice; echo" грн";      ?></td>
                      </tr>
 
      </table>
@@ -166,7 +163,7 @@ $conn3 = mysqli_connect($servername,$username,$password,$database);
            if (mysqli_query($conn3, $sql)) {echo '<script>location.replace("http://localhost/ATM_project/index.php?action=order");</script>';}
            else {
           echo "Error: " . $sql . "<br>" . mysqli_error($conn3);
-           }}
+           }}}
         mysqli_close($conn3);
        ?>
  </form>
