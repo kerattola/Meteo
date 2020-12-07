@@ -37,7 +37,7 @@ else{
  
         echo '<div class = "col-lg-3 col-md-3 col-sm-6">
               <div class = "test"><div class="zoom">
-              <img class = "imgcard" src="/ATM_project/img/products/'.$row["image"].'" style="width:270px;height:180px;">'.'<p>'.$row["title"].'</p></div><p>'.$row["price"].'</p>'.'<label class="switch"><input type="checkbox" name="prod_list[]" value="'.$row["product_id"].'"><span class="slider"></span></label></div></div>';  
+              <img class = "imgcard" src="/pal_ker_kla/img/products/'.$row["image"].'" style="width:270px;height:180px;">'.'<p>'.$row["title"].'</p></div><p>'.$row["price"].'</p>'.'<label class="switch"><input type="checkbox" name="prod_list[]" value="'.$row["product_id"].'"><span class="slider"></span></label></div></div>';
   
   if ($row["product_id"]%4==0){
     echo '</div><p></p><div class = "row">';
@@ -51,7 +51,7 @@ echo '<br></div><p>Виберіть Спосіб приготування </p>
           
           echo '<div class = "col-lg-3 col-md-3 col-sm-6">
                 <div class = "testsmal"><div class="zoom">
-                <img class = "imgcard" src="/ATM_project/img/products/'.$row["image"].'" style="width:150px;height:100px;">'.'<p>'.$row["method"].'</p></div><p>'.$row["price"].'</p>'.'<input type="radio" id= "'.$row["id"].']" name="typecook" value= "'.$row["id"].'">
+                <img class = "imgcard" src="/pal_ker_kla/img/products/'.$row["image"].'" style="width:150px;height:100px;">'.'<p>'.$row["method"].'</p></div><p>'.$row["price"].'</p>'.'<input type="radio" id= "'.$row["id"].']" name="typecook" value= "'.$row["id"].'">
           <label class="log" for="'.$row["id"].'"></label></div></div>';
           
        }
@@ -107,7 +107,7 @@ $resofdish = mysqli_query($conn3, $inprodish) or die("Ошибка " . mysqli_er
 echo '<button type="submit" name="new">Зібрати страву</button>';
 
 if(isset($_POST['new'])){
- echo '<script>location.replace("http://localhost/ATM_project/index.php?action=newdish");</script>';
+ echo '<script>location.replace("http://localhost/pal_ker_kla/index.php?action=newdish");</script>';
   }
     mysqli_close($conn3);
   }

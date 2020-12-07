@@ -39,5 +39,5 @@
 
  unset($_SESSION["login"]);
  session_destroy();
- header("Location:http://localhost/ATM_project/index.php?action=home");
+ header("Location:http://localhost/pal_ker_kla/index.php?action=home");
  ?>

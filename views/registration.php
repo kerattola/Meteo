@@ -91,7 +91,7 @@ $conn3 = mysqli_connect($servername,$username,$password,$database);
          $email1=$_POST["email"];
           $phone1=$_POST["phone"];
        $sql = "INSERT INTO clients (full_name, email, password, phone) VALUES ('$fullname1', '$email1', '$hash',' $phone1')";
-       if (mysqli_query($conn, $sql)) {header("Location:http://localhost/ATM_project/index.php?action=registration_successful");}
+       if (mysqli_query($conn, $sql)) {header("Location:http://localhost/pal_ker_kla/index.php?action=registration_successful");}
        else {
       echo "Error: " . $sql . "<br>" . mysqli_error($conn);
        }

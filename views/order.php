@@ -60,7 +60,7 @@ $password = "";
                  $address= $_POST['address'];
               //    $sql4 = "INSERT INTO orders(address) VALUES ('$address') WHERE order_id=$id";
                   $sql4 = "UPDATE `orders` SET `address`='$address' WHERE order_id=$id";
-                  if (mysqli_query($conn3,$sql4)) {echo '<script>location.replace("http://localhost/ATM_project/index.php?action=order_successful");</script>';}
+                  if (mysqli_query($conn3,$sql4)) {echo '<script>location.replace("http://localhost/pal_ker_kla/index.php?action=order_successful");</script>';}
                   else {
                  echo "Error: " . $sql4 . "<br>" . mysqli_error($conn3);
                   }}

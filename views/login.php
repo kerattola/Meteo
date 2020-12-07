@@ -63,7 +63,7 @@ if(!empty($_POST)) {
     mysqli_free_result($resultsql);
     }
 
-     header("Location:http://localhost/ATM_project/index.php?action=home");
+     header("Location:http://localhost/pal_ker_kla/index.php?action=home");
     }}
     if($auth == False){
       $Err = "Неправильна пошта або пароль!";

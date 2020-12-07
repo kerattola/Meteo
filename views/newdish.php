@@ -49,7 +49,7 @@ if(isset($_POST['cart'])){
         if($typ==1){
 
           $addin = "INSERT INTO `order_dish`(`order_id`, `dish_id`) VALUES ($my_or,$my_dish)";
-          if (mysqli_query($conn3, $addin)) {header("корзина");}
+          if (mysqli_query($conn3, $addin)) {header("Location:http://localhost/pal_ker_kla/index.php?action=shopping_cart");}
           else {
           echo "Error: " . $sql . "<br>" . mysqli_error($conn3);
            }
@@ -58,7 +58,7 @@ if(isset($_POST['cart'])){
         if($typ==2){
 
           $addin = "INSERT INTO `order_dish`(`order_id`, `dish_id`) VALUES ($my_or,$my_dish)";
-          if (mysqli_query($conn3, $addin)) {header("Location:http://localhost/ATM_project/index.php?action=constructure");}
+          if (mysqli_query($conn3, $addin)) {header("Location:http://localhost/pal_ker_kla/index.php?action=constructure");}
           else {
           echo "Error: " . $sql . "<br>" . mysqli_error($conn3);
            }
@@ -68,7 +68,7 @@ if(isset($_POST['cart'])){
 
           $addin = "DELETE FROM `prod_dish` WHERE `dish_id`=$my_dish";
           $addin2 = "DELETE FROM `dish` WHERE `dish_id`=$my_dish";
-          if (mysqli_query($conn3, $addin) && mysqli_query($conn3, $addin2)) {header("Location:http://localhost/ATM_project/index.php?action=constructure");}
+          if (mysqli_query($conn3, $addin) && mysqli_query($conn3, $addin2)) {header("Location:http://localhost/pal_ker_kla/index.php?action=constructure");}
           else {
           echo "Error: " . $sql . "<br>" . mysqli_error($conn3);
            }
@@ -78,7 +78,7 @@ if(isset($_POST['cart'])){
 
           $addin = "DELETE FROM `prod_dish` WHERE `dish_id`=$my_dish";
           $addin2 = "DELETE FROM `dish` WHERE `dish_id`=$my_dish";
-          if (mysqli_query($conn3, $addin) && mysqli_query($conn3, $addin2)) {header("Location:http://localhost/ATM_project/index.php?action=our_menu");}
+          if (mysqli_query($conn3, $addin) && mysqli_query($conn3, $addin2)) {header("Location:http://localhost/pal_ker_kla/index.php?action=our_menu");}
           else {
           echo "Error: " . $sql . "<br>" . mysqli_error($conn3);
            }

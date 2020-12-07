@@ -20,8 +20,8 @@
    $r1 = '<div class = "row">';
    echo $r1;
   while ($row =$result3->fetch_assoc()) {
-  $im1 = '<div class = "col-lg-3 col-md-3 col-sm-6"><div class = "test"><div class="zoom"><img class = "imgcard" src="/ATM_project/img/our_menu/'.$row["image"].'" style="width:243px;height:324px;">'.'<p>'.$row["title"].'</p></div><p>'.$row["price"].'</p>'.'</div></div>';
-  $im2 = '<div class = "col-lg-3 col-md-3 col-sm-6"><div class = "test"><div class="zoom"><img class = "imgcard" src="/ATM_project/img/our_menu/'.$row["image"].'" style="width:243px;height:324px;">'.'<p>'.$row["title"].'</p></div><p>'.$row["price"].'</p>'.'<label class="switch"><input type="checkbox" name="menu_list[]" value="'.$row["menudish_id"].'"><span class="slider"></span></label></div></div>';
+  $im1 = '<div class = "col-lg-3 col-md-3 col-sm-6"><div class = "test"><div class="zoom"><img class = "imgcard" src="/pal_ker_kla/img/our_menu/'.$row["image"].'" style="width:243px;height:324px;">'.'<p>'.$row["title"].'</p></div><p>'.$row["price"].'</p>'.'</div></div>';
+  $im2 = '<div class = "col-lg-3 col-md-3 col-sm-6"><div class = "test"><div class="zoom"><img class = "imgcard" src="/pal_ker_kla/img/our_menu/'.$row["image"].'" style="width:243px;height:324px;">'.'<p>'.$row["title"].'</p></div><p>'.$row["price"].'</p>'.'<label class="switch"><input type="checkbox" name="menu_list[]" value="'.$row["menudish_id"].'"><span class="slider"></span></label></div></div>';
   
   if(!isset($_SESSION['login']) and empty($_SESSION['login'])) echo $im1;  
   else echo $im2;

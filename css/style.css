@@ -4,7 +4,7 @@
 
 body {
   font-family: Arial;
-  background: url("/ATM_project/img/back.jpg");
+  background: url("/pal_ker_kla/img/back.jpg");
 }
 
 .header {
@@ -54,7 +54,7 @@ p{
 footer {
   padding: 20px;
   text-align: center;
-  background: url("/ATM_project/img/woodblack.jpg");
+  background: url("/pal_ker_kla/img/woodblack.jpg");
   margin-top: 20px;
   position: relative;
 }
@@ -162,7 +162,7 @@ footer {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   max-width: 300px;
   text-align: center;
-  background: url("/ATM_project/img/woodblack.jpg");
+  background: url("/pal_ker_kla/img/woodblack.jpg");
 }
 
 .testsmal{
@@ -170,7 +170,7 @@ footer {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   max-width: 240px;
   text-align: center;
-  background: url("/ATM_project/img/woodblack.jpg");
+  background: url("/pal_ker_kla/img/woodblack.jpg");
 }
 
 .imgcard{
@@ -225,7 +225,7 @@ section {
   margin-top: 15px;
   margin-left: 410px;
   margin-right: 410px;
-  background-image: url("/ATM_project/img/woodblack.jpg");
+  background-image: url("/pal_ker_kla/img/woodblack.jpg");
   box-shadow: 0 0 10px rgba(255,141,13,1.5); 
 
 }
@@ -466,3 +466,10 @@ input[type=address]:focus {
  .tdwidth {
  width: 100%;
   }
+th,td{
+ font-family: DFMincho-UB;
+   font-size: 30%;
+   font-weight: normal;
+   color: #F28338;
+   font-style: italic;
+}
