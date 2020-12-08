@@ -57,13 +57,21 @@ $password = "";
 
    }
       if(isset($_POST['confirm'])){
-                 $address= $_POST['address'];
-              //    $sql4 = "INSERT INTO orders(address) VALUES ('$address') WHERE order_id=$id";
-                  $sql4 = "UPDATE `orders` SET `address`='$address' WHERE order_id=$id";
-                  if (mysqli_query($conn3,$sql4)) {echo '<script>location.replace("http://localhost/pal_ker_kla/index.php?action=order_successful");</script>';}
-                  else {
-                 echo "Error: " . $sql4 . "<br>" . mysqli_error($conn3);
-                  }}
+        $count= "SELECT * FROM `clients` WHERE client_id = ".$_SESSION['id'];
+        $res_c = $conn3->query($count);
+            while ($row =$res_c ->fetch_assoc()) {
+                  $amount=$row['order_emount'];
+             }
+        $amount=$amount+1;
+        $upamount = "UPDATE `clients` SET `order_emount`='$amount' WHERE client_id =".$_SESSION['id']; 
+        $res = mysqli_query($conn3, $upamount) or die("Ошибка " . mysqli_error($conn3)); 
+                 
+        $address= $_POST['address'];
+          $sql4 = "UPDATE `orders` SET `address`='$address' WHERE order_id=$id";
+            if (mysqli_query($conn3,$sql4)) {echo '<script>location.replace("http://localhost/pal_ker_kla/index.php?action=order_successful");</script>';}
+             else {
+              echo "Error: " . $sql4 . "<br>" . mysqli_error($conn3);
+                 }}
                mysqli_close($conn3);
                ?>
 

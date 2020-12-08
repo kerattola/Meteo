@@ -2,6 +2,7 @@
     <a name="constructure"></a>
     <div class="container">
      <?php
+  $cook_id=0;
   $servername = "localhost";
   $database = "atm_teamdb";
   $username = "root";
@@ -14,7 +15,7 @@
 
 else{
   
-  echo '<p>Виберіть страву, яку хочете скласти в конструкторі</p>
+  echo '<h4><p>Виберіть страву, яку хочете скласти в конструкторі</p></h4>
        <div class = "row">';
 
     $type_dish= "SELECT * FROM type_dish";
@@ -43,7 +44,7 @@ else{
     echo '</div><p></p><div class = "row">';
       }
 }
-echo '<br></div><p>Виберіть Спосіб приготування </p>
+echo '<br></div><br><h4><p>Виберіть Спосіб приготування</p></h4>
            <div class = "row">';
           $type_cook= "SELECT * FROM type_cooking";
           $res_cook = $conn3->query($type_cook);
@@ -60,13 +61,11 @@ echo '<br></div><p>Виберіть Спосіб приготування </p>
 $perevirka=0;
 if(isset($_POST['typedish'])){
         $typ_id = (int)$_POST['typedish'];
-        //echo '<p>'.$typ_id.'</p>';
         $perevirka=$perevirka+1;
       }
 
 if(isset($_POST['typecook'])){
         $cook_id = (int)$_POST['typecook'];
-        //echo '<p>'.$cook_id.'</p>';
         $perevirka=$perevirka+1;
       }
 
@@ -84,8 +83,8 @@ $tryres = $conn3->query($testtry);
    $perevirka=$perevirka+1;
 }
 
-if($perevirka==3){
-   $indish = "INSERT INTO `dish`(`type`, `price`, `cook_method`) VALUES ('$typ_id','$sumprice','$cook_id')";
+if($perevirka<3 && isset($_POST['typedish']) && !empty($_POST['prod_list'])){
+   $indish = "INSERT INTO `dish`(`type`, `price`) VALUES ('$typ_id','$sumprice')";
    $dishfind = "SELECT @@identity;";
         $indo1 = mysqli_query($conn3, $indish) or die("Ошибка " . mysqli_error($conn3)); 
         $indo2 = mysqli_query($conn3, $dishfind) or die("Ошибка " . mysqli_error($conn3));
@@ -102,11 +101,30 @@ foreach($produ as $id) {
 $inprodish = "INSERT INTO `prod_dish`(`product_id`, `dish_id`) VALUES ('$id','$myid_dish')";
 $resofdish = mysqli_query($conn3, $inprodish) or die("Ошибка " . mysqli_error($conn3)); 
 }
-
 }
-echo '<button type="submit" name="new">Зібрати страву</button>';
+else if($perevirka==3){
+  $indish = "INSERT INTO `dish`(`type`, `price`, `cook_method`) VALUES ('$typ_id','$sumprice','$cook_id')";
+   $dishfind = "SELECT @@identity;";
+        $indo1 = mysqli_query($conn3, $indish) or die("Ошибка " . mysqli_error($conn3)); 
+        $indo2 = mysqli_query($conn3, $dishfind) or die("Ошибка " . mysqli_error($conn3));
+      if($indo1 && $indo2)
+    {
+        while ($row = mysqli_fetch_row($indo2)) {
+            $myid_dish =$row[0]; 
+          }
+     $_SESSION['newdish'] =$myid_dish; 
+    mysqli_free_result($indo2);
+    }
 
-if(isset($_POST['new'])){
+foreach($produ as $id) {
+$inprodish = "INSERT INTO `prod_dish`(`product_id`, `dish_id`) VALUES ('$id','$myid_dish')";
+$resofdish = mysqli_query($conn3, $inprodish) or die("Ошибка " . mysqli_error($conn3)); 
+}
+}
+
+echo '<button type="submit" class="buttondish" name="new">Зібрати страву</button>';
+
+if(isset($_POST['new']) && $perevirka>=2 && isset($_POST['typedish']) && !empty($_POST['prod_list'])){
  echo '<script>location.replace("http://localhost/pal_ker_kla/index.php?action=newdish");</script>';
   }
     mysqli_close($conn3);

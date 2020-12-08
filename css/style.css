@@ -47,8 +47,7 @@ p{
   font-size: 100%;
   font-weight: normal;
   color: #F28338;
-  font-style: italic;
-
+  text-shadow: 3px 3px 8px black;
 }
 
 footer {
@@ -179,18 +178,18 @@ footer {
   }
 
 .card1 { 
-  width: 800px; 
+  width: 700px; 
   font-size: 17pt;
   color: #FFA850;
   text-indent: 1.5em;
   position: relative;
-  font-family:cursive;
+
 }
 
 .img11
 {
-  width: 500px;
-  height: 300px;
+  width: 450px;
+  height: 270px;
   position: relative;
   float: right;
   margin-right: 20px;
@@ -236,8 +235,7 @@ section {
   font-size: 220%;
   font-weight: normal;
   text-decoration: underline;
-  color: #F28338;
-  font-style: italic;
+  color: #F28338; 
 } 
 /*Назви полів*/
 .inlinetxt{
@@ -466,10 +464,28 @@ input[type=address]:focus {
  .tdwidth {
  width: 100%;
   }
+
 th,td{
  font-family: DFMincho-UB;
    font-size: 30%;
    font-weight: normal;
    color: #F28338;
    font-style: italic;
+}
+.deletebttn{
+   background-color: black;
+   font-color: #F28338;
+   color: #F28338;
+   font-style: italic;
+
+}
+.buttondish {
+  background-color: #F28338;
+  border: 1;
+  font-size: 18px;
+  color: black;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
 }

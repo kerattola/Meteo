@@ -32,7 +32,7 @@
 echo '</div>';
 if(isset($_SESSION['login']) and !empty($_SESSION['login'])){
 echo '<div id="follow">
-      <input type="submit" value= "Додати до замовлення"/>
+      <input type="submit" class="buttondish" value= "Додати до замовлення"/>
       </div>';
 }
 if(!empty($_POST['menu_list'])) {
