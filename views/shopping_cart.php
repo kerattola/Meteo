@@ -1,5 +1,5 @@
 <?php
-  
+
    $servername = "localhost";
    $database = "atm_teamdb";
    $username = "root";
@@ -64,9 +64,9 @@ $conn3 = mysqli_connect($servername,$username,$password,$database);
                               }
                               if(isset($_POST['minus'])&&($row['amount']>1)){
                               $amount= $amount-1;
-                              $ivanka=(int)key($_POST['minus']);
+                              $i1=(int)key($_POST['minus']);
                               $sql6 = "UPDATE order_menudish SET amount= '$amount'
-                                      WHERE order_id=$id AND menudish_id = $ivanka";
+                                      WHERE order_id=$id AND menudish_id = $i1";
                                  mysqli_query($conn3, $sql6) or die("Ошибка " . mysqli_error($conn3));
                                     }
                                     echo $row['amount'];
@@ -74,6 +74,17 @@ $conn3 = mysqli_connect($servername,$username,$password,$database);
                              ?>
                              <td><?php echo $row["price"] ?></td>
                              <td><?php echo  $subtotal1 ?></td>
+                              <td><button type='submit' class= "deletebttn" name='delete1'>Видалити</button></td>
+                             <?php
+                             if(isset($_POST['delete1'])){
+                               $sql7 = "DELETE FROM order_menudish
+                                      WHERE order_id=$id AND menudish_id = $d_id";
+                                 mysqli_query($conn3, $sql7) or die("Ошибка " . mysqli_error($conn3));
+                             }
+                             ?>
+
+
+
                          </tr>
                         <?php
 
@@ -140,7 +151,15 @@ $conn3 = mysqli_connect($servername,$username,$password,$database);
                                 echo "<button type='submit' name='plus[$d2_id]'>+</button></td>";
                               ?>
                                  <td><?php echo $row["price"] ?></td>
-                                 <td><?php echo  $subtotal2; }}  ?></td>
+                                 <td><?php echo  $subtotal2;  ?></td>
+                                 <td><button type='submit' class= "deletebttn" name='delete2'>Видалити</button></td>
+                            <?php
+                              if(isset($_POST['delete2'])){
+                                $sql7 = "DELETE FROM order_dish
+                                       WHERE order_id=$id AND dish_id = $d2_id";
+                                  mysqli_query($conn3, $sql7) or die("Ошибка " . mysqli_error($conn3));
+                              }}}
+                              ?>
                                  </tr>
 
                      <tr>
