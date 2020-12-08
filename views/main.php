@@ -28,13 +28,13 @@
 
 <?php 
   
-  if(isset($_SESSION['login']) and !empty($_SESSION['login'])) {
+  /*if(isset($_SESSION['login']) and !empty($_SESSION['login'])) {
 
    $s=''; $s=$_SESSION['login'];
    $q=''; $q=$_SESSION['id'];
    $e=''; $e=$_SESSION['neworder'];
    echo "You entered as \n"; echo ($s); echo("<br>"); echo ($q);
    echo "Your order: \n"; echo ($e);echo("\n");
-}
+}*/
 
    ?>

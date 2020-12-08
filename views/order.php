@@ -68,7 +68,24 @@ $password = "";
                  
         $address= $_POST['address'];
           $sql4 = "UPDATE `orders` SET `address`='$address' WHERE order_id=$id";
-            if (mysqli_query($conn3,$sql4)) {echo '<script>location.replace("http://localhost/pal_ker_kla/index.php?action=order_successful");</script>';}
+            if (mysqli_query($conn3,$sql4)) {
+
+             $my_id = (int)$_SESSION['id'];
+      
+             $insql = "INSERT INTO orders(client_id) VALUES ('$my_id');";
+             $sql = "SELECT @@identity;";
+             $res = mysqli_query($conn3, $insql) or die("Ошибка " . mysqli_error($conn3)); 
+             $resultsql = mysqli_query($conn3, $sql) or die("Ошибка " . mysqli_error($conn3)); 
+             if($res && $resultsql)
+             {
+    
+               while ($row = mysqli_fetch_row($resultsql)) {
+                $_SESSION['neworder'] =$row[0]; 
+              }
+    
+              mysqli_free_result($resultsql);
+              }
+              echo '<script>location.replace("http://localhost/pal_ker_kla/index.php?action=order_successful");</script>';}
              else {
               echo "Error: " . $sql4 . "<br>" . mysqli_error($conn3);
                  }}

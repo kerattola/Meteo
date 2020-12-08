@@ -47,7 +47,7 @@ if(!empty($_POST)) {
       $_SESSION['name'] = $row["full_name"];
       $_SESSION['admin'] = $row["admin"];
       
-      $my_id = (int)$_SESSION['id'];
+    $my_id = (int)$_SESSION['id'];
       
     $insql = "INSERT INTO orders(client_id) VALUES ('$my_id');";
     $sql = "SELECT @@identity;";

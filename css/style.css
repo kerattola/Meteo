@@ -380,11 +380,11 @@ right: 0px;
 }
 
 input:checked + .slider {
-  background-color: #2196F3;
+  background-color: #0ccc16;
 }
 
 input:focus + .slider {
-  box-shadow: 0 0 1px #2196F3;
+  box-shadow: 0 0 1px #0ccc16;
 }
 
 input:checked + .slider:before {
@@ -467,7 +467,7 @@ input[type=address]:focus {
 
 th,td{
  font-family: DFMincho-UB;
-   font-size: 30%;
+   font-size: 80%;
    font-weight: normal;
    color: #F28338;
    font-style: italic;
@@ -488,4 +488,7 @@ th,td{
   text-align: center;
   text-decoration: none;
   cursor: pointer;
+}
+.error{
+  color: red;
 }

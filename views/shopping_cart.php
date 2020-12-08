@@ -75,16 +75,7 @@ $conn3 = mysqli_connect($servername,$username,$password,$database);
                              <td><?php echo $row["price"] ?></td>
                              <td><?php echo  $subtotal1 ?></td>
                               <td><button type='submit' class= "deletebttn" name='delete1'>Видалити</button></td>
-                             <?php
-                             if(isset($_POST['delete1'])){
-                               $sql7 = "DELETE FROM order_menudish
-                                      WHERE order_id=$id AND menudish_id = $d_id";
-                                 mysqli_query($conn3, $sql7) or die("Ошибка " . mysqli_error($conn3));
-                             }
-                             ?>
-
-
-
+                      
                          </tr>
                         <?php
 
@@ -109,14 +100,14 @@ $conn3 = mysqli_connect($servername,$username,$password,$database);
                                    <th><p>Ціна</p></th>
                                    <th><p>Сума</p></th>
                                     </tr>
-                               <tr> <?php
+                                <?php
                                while($row=mysqli_fetch_array($query2)){
 
                                 $subtotal2=$row["amount"]*$row["price"];
                                 $totalprice+=$subtotal2;
                                 $d2_id = (int)$row["dish_id"];
                                 ?>
-
+                                <tr>
                                 <td><?php echo "Тип страви: " ?><?php echo $row["name"] ?> <?php echo "." ?>
                                 <br><?php echo " Коментар: " ?>
                                 <?php if($row["coment"])
@@ -154,11 +145,7 @@ $conn3 = mysqli_connect($servername,$username,$password,$database);
                                  <td><?php echo  $subtotal2;  ?></td>
                                  <td><button type='submit' class= "deletebttn" name='delete2'>Видалити</button></td>
                             <?php
-                              if(isset($_POST['delete2'])){
-                                $sql7 = "DELETE FROM order_dish
-                                       WHERE order_id=$id AND dish_id = $d2_id";
-                                  mysqli_query($conn3, $sql7) or die("Ошибка " . mysqli_error($conn3));
-                              }}}
+                              }}
                               ?>
                                  </tr>
 
@@ -167,7 +154,22 @@ $conn3 = mysqli_connect($servername,$username,$password,$database);
                      </tr>
 
      </table>
+
+   <?php
+      if(isset($_POST['delete1'])){
+         $sql7 = "DELETE FROM order_menudish
+           WHERE order_id=$id AND menudish_id = $d_id";
+       mysqli_query($conn3, $sql7) or die("Ошибка " . mysqli_error($conn3));
+                             }
+     if(isset($_POST['delete2'])){
+        $sql7 = "DELETE FROM order_dish
+          WHERE order_id=$id AND dish_id = $d2_id";
+            mysqli_query($conn3, $sql7) or die("Ошибка " . mysqli_error($conn3));
+          }
+         ?>
+
      <br />
+     <div align = "center"><button type="submit" class="registerbtn">Оновити корзину</button></div>
      <p> <a href="index.php?action=our_menu" class="reglink" >Повернутися до меню.</a></p>
      <p> <a href="index.php?action=constructure" class="reglink" >Повернутися до конструктора страв.</a></p>
      <div align = "center"><button type="submit" name="myord" class="registerbtn">Оформити замовлення </button></div>
