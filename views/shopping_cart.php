@@ -53,28 +53,30 @@ $conn3 = mysqli_connect($servername,$username,$password,$database);
 
 
                              <?php
-                              echo "<td><button type='submit' name='minus[$d_id]'>-</button>";
+                              echo "<td><button  name='minus1[$d_id]'>-</button>";
                               $amount = (int)$row['amount'];
-                              if(isset($_POST['plus'])){
-                              $amount= $amount+1;
-                              $tania =  (int)key($_POST['plus']);
-                              $sql5 = "UPDATE order_menudish SET amount= '$amount'
+                              if(isset($_POST['plus1'])){
+                              $amountn= $amount+1;
+                              $tania =  (int)key($_POST['plus1']);
+                              $sql5 = "UPDATE order_menudish SET amount= '$amountn'
                                       WHERE order_id=$id AND menudish_id = $tania";
                               mysqli_query($conn3, $sql5) or die("Ошибка " . mysqli_error($conn3));
                               }
-                              if(isset($_POST['minus'])&&($row['amount']>1)){
-                              $amount= $amount-1;
-                              $i1=(int)key($_POST['minus']);
-                              $sql6 = "UPDATE order_menudish SET amount= '$amount'
+                              if(isset($_POST['minus1'])&&($row['amount']>1)){
+                              $amountn= $amount-1;
+                              $i1=(int)key($_POST['minus1']);
+                              $sql6 = "UPDATE order_menudish SET amount= '$amountn'
                                       WHERE order_id=$id AND menudish_id = $i1";
                                  mysqli_query($conn3, $sql6) or die("Ошибка " . mysqli_error($conn3));
                                     }
                                     echo $row['amount'];
-                               echo "<button type='submit' name='plus[$d_id]'>+</button></td>";
+                               echo "<button  name='plus1[$d_id]'>+</button></td>";
                              ?>
                              <td><?php echo $row["price"] ?></td>
                              <td><?php echo  $subtotal1 ?></td>
-                              <td><button type='submit' class= "deletebttn" name='delete1'>Видалити</button></td>
+                             <?php
+                              echo "<td><button  class= 'deletebttn' name='delete1[$d_id]'>Видалити</button></td>";
+                              ?>
                       
                          </tr>
                         <?php
@@ -118,32 +120,34 @@ $conn3 = mysqli_connect($servername,$username,$password,$database);
                                         }
                                 ?></td>
                               <?php
-                               echo "<td><button type='submit' name='minus[$d2_id]'>-</button>";
+                               echo "<td><button  name='minus2[$d2_id]'>-</button>";
                                $amount = (int)$row['amount'];
-                               if(isset($_POST['plus'])){
-                               $amount= $amount+1;
-                               $t1 =  (int)key($_POST['plus']);
+                               if(isset($_POST['plus2'])){
+                               $amountn= $amount+1;
+                               $t1 =  (int)key($_POST['plus2']);
                                $sql5 = "UPDATE dish AS d
                                         INNER JOIN order_dish AS o ON o.dish_id= d.dish_id
-                                        SET d.amount= '$amount'
+                                        SET d.amount= '$amountn'
                                         WHERE o.order_id=$id AND d.dish_id =$t1";
                                mysqli_query($conn3, $sql5) or die("Ошибка " . mysqli_error($conn3));
                                }
-                               if(isset($_POST['minus'])&&($row['amount']>1)){
-                               $amount= $amount-1;
-                               $t2=(int)key($_POST['minus']);
+                               if(isset($_POST['minus2'])&&($row['amount']>1)){
+                               $amountn= $amount-1;
+                               $t2=(int)key($_POST['minus2']);
                                $sql6 = "UPDATE dish AS d
                                        INNER JOIN order_dish AS o ON o.dish_id= d.dish_id
-                                        SET d.amount= '$amount'
+                                        SET d.amount= '$amountn'
                                           WHERE o.order_id=$id AND d.dish_id = $t2";
                                   mysqli_query($conn3, $sql6) or die("Ошибка " . mysqli_error($conn3));
                                      }
                                      echo $row['amount'];
-                                echo "<button type='submit' name='plus[$d2_id]'>+</button></td>";
+                                echo "<button  name='plus2[$d2_id]'>+</button></td>";
                               ?>
                                  <td><?php echo $row["price"] ?></td>
                                  <td><?php echo  $subtotal2;  ?></td>
-                                 <td><button type='submit' class= "deletebttn" name='delete2'>Видалити</button></td>
+                                  <?php
+                              echo "<td><button  class= 'deletebttn' name='delete2[$d2_id]'>Видалити</button></td>";
+                              ?>
                             <?php
                               }}
                               ?>
@@ -157,13 +161,15 @@ $conn3 = mysqli_connect($servername,$username,$password,$database);
 
    <?php
       if(isset($_POST['delete1'])){
+        $t3=(int)key($_POST['delete1']);
          $sql7 = "DELETE FROM order_menudish
-           WHERE order_id=$id AND menudish_id = $d_id";
+           WHERE order_id=$id AND menudish_id = $t3";
        mysqli_query($conn3, $sql7) or die("Ошибка " . mysqli_error($conn3));
                              }
      if(isset($_POST['delete2'])){
+      $t4=(int)key($_POST['delete2']);
         $sql7 = "DELETE FROM order_dish
-          WHERE order_id=$id AND dish_id = $d2_id";
+          WHERE order_id=$id AND dish_id = $t4";
             mysqli_query($conn3, $sql7) or die("Ошибка " . mysqli_error($conn3));
           }
          ?>
