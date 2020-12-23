@@ -64,7 +64,7 @@ $conn3 = mysqli_connect($servername,$username,$password,$database);
     <input type="password" placeholder="Повторіть пароль" name="psw-repeat" required>
   <span class="error"> <?php if(!empty($_POST)) {
       if(isset($_POST["psw-repeat"]) && ($_POST["psw-repeat"] != $_POST["psw"])) {
-      $repassdErr = "Направильний пароль!";
+      $repassdErr = "Неправильний пароль!";
       echo $repassdErr; $flag = false;
       }
       }
