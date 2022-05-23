@@ -3,8 +3,19 @@
 }
 
 body {
-  font-family: Arial;
-  background: url("/meteo/img/back.jpg");
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: 'Heebo', sans-serif;
+    font-family: 'Roboto', sans-serif;
+    background: url("/meteo/img/back.jpg");
+}
+
+.container {
+    min-height: 1000%;
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
 }
 
 .header {
@@ -49,13 +60,25 @@ p{
   color: #F28338;
   text-shadow: 3px 3px 8px black;
 }
+.adding {
+    display: flex;
+    flex-direction: column;
+}
+.adding__inner {
+    color: #e26025;
+    width: 100%;
+    text-align: right;
+
+}
+
 
 footer {
-  padding: 20px;
-  text-align: center;
-  background: url("/meteo/img/woodblack.jpg");
-  margin-top: 20px;
-  position: relative;
+    padding: 30px;
+    text-align: center;
+    background: url("/meteo/img/woodblack.jpg");
+    margin-top: 50px;
+    height: 100px;
+    color: #e26025;
 }
 
 .glow-on-hover {
@@ -250,9 +273,9 @@ input[type=text], input[type=password] {
   font-style: italic;
   font-weight: normal;
   color: #cc7722;
-  width: 60%;
+  width: 30%;
   padding: 4px ;
-  margin: 5px 0 8px 135px;
+  margin: 5px 300px 8px 35px;
   display: inline-block;
   border: none;
   background:#a3a19d;
@@ -284,6 +307,7 @@ input[type=text]:focus, input[type=password]:focus {
   color: #2b2b2a;
   padding: 7px;
   margin-bottom: 10px;
+  margin-left:350px;
   border: none;
   cursor: pointer;
   width: 40%;
@@ -471,17 +495,18 @@ table {
 }
 
 td, th {
-  border: 1px solid #555;
-  text-align: left;
-  padding: 8px;
+    border: 1px solid #555;
+    text-align: left;
+    padding: 8px;
+
 }
 
 th {
-  background-color: #FD2060;
+    background-color: #f2601d;
 }
 
 tr {
-  background-color: #DFC2D2;
+    background-color: #ffd2bd;
 }
 .deletebttn{
    background-color: black;
@@ -491,14 +516,15 @@ tr {
 
 }
 .buttondish {
-  background-color: #F28338;
-  border: 1;
-  font-size: 18px;
-  color: black;
-  padding: 10px;
-  text-align: center;
-  text-decoration: none;
-  cursor: pointer;
+    background-color: #f2601d;
+    border-radius: 55px;
+    border: none;
+    font-size: 18px;
+    color: black;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
 }
 .error{
   color: red;

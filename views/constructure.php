@@ -8,49 +8,49 @@
 <form action="index.php?action=constructure" method="POST">
     <a name="constructure"></a>
     <div class="container">
-  <p>Заповніть Дані метеостанції</p>
+        <p>Заповніть Дані метеостанції</p>
         <p>1 - номер міста Чернівці</p>
         <p>2 - номер міста Львів</p>
         <p>3 - номер міста Київ</p>
     <hr>
-        <label for="name"><b>Місто</b></label>
-        <input type="text" placeholder="Введіть номер міста" name="id_region" required>
-        <br>
-
-        <label for="year"><b>Рік</b></label>
-        <input type="text" placeholder="Введіть рік" name="year" required>
-        <br>
-
-        <label for="type"><b>Місяць</b></label>
-        <input type="text" placeholder="Введіть місяць" name="month" required>
-        <br>
-
-        <label for="price"><b>День</b></label>
-        <input type="text" placeholder="Введіть день" name="day" required>
-        <br>
-
-        <label for="price"><b>Температура</b></label>
-        <input type="text" placeholder="Введіть температуру" name="temperature" required>
-        <br>
-
-        <label for="price"><b>Тиск</b></label>
-        <input type="text" placeholder="Введіть тиск" name="pressure" required>
-        <br>
-
-        <label for="price"><b>Вологість повітря</b></label>
-        <input type="text" placeholder="Введіть вологість повітря" name="humidity" required>
-        <br>
-
-        <label for="price"><b>Швидкість вітру</b></label>
-        <input type="text" placeholder="Введіть швидкість вітру" name="wind_speed" required>
-        <br>
-
-        <label for="price"><b>Опади</b></label>
-        <input type="text" placeholder="Введіть кількість опадів" name="precipitation" required>
-        <br>
-
-        <hr>
-
+        <div class="adding">
+            <div class="adding__inner">
+                <label for="name"><b>Місто</b></label>
+                <input type="text" placeholder="Введіть номер міста" name="id_region" required>
+            </div>
+            <div class="adding__inner">
+                <label for="year"><b>Рік</b></label>
+                <input type="text" placeholder="Введіть рік" name="year" required>
+            <div class="adding__inner">
+                <label for="type"><b>Місяць</b></label>
+                <input type="text" placeholder="Введіть місяць" name="month" required>
+            </div>
+            <div class="adding__inner">
+                <label for="price"><b>День</b></label>
+                <input type="text" placeholder="Введіть день" name="day" required>
+            </div>
+            <div class="adding__inner">
+                <label for="price"><b>Температура</b></label>
+                <input type="text" placeholder="Введіть температуру" name="temperature" required>
+            </div>
+            <div class="adding__inner">
+                <label for="price"><b>Тиск</b></label>
+                <input type="text" placeholder="Введіть тиск" name="pressure" required>
+            </div>
+            <div class="adding__inner">
+                <label for="price"><b>Вологість повітря</b></label>
+                <input type="text" placeholder="Введіть вологість повітря" name="humidity" required>
+            </div>
+            <div class="adding__inner">
+                <label for="price"><b>Швидкість вітру</b></label>
+                <input type="text" placeholder="Введіть швидкість вітру" name="wind_speed" required>
+            </div>
+            <div class="adding__inner">
+                <label for="price"><b>Опади</b></label>
+                <input type="text" placeholder="Введіть кількість опадів" name="precipitation" required>
+            </div>
+            <hr>
+        </div>
         <button type="submit" class="registerbtn">Додати дані</button>
         <?php if(!empty($_POST)) {
 
@@ -91,5 +91,6 @@
         }
 
         ?>
+    </div>
 </div>
  </form>
