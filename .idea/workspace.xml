@@ -1,32 +1,189 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="f9ff3e9b-2288-4076-9025-ceca166e969c" name="Default Changelist" comment="" />
+    <list default="true" id="f6597362-8913-41c0-be69-c327fdcdf543" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/pal_ker_kla.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/about1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/about2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/about3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/cook.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/fabrizio-magoni-boaDpmC-_Xo-unsplash.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/hue12-photography-8rTwokBwz1w-unsplash.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/img" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/img1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/joanna-boj-MhOoD_h90ks-unsplash.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/our_menu/krivetki1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/our_menu/miaso.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/our_menu/pasta1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/our_menu/pechinka1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/our_menu/pizza1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/our_menu/pizza2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/our_menu/pizza3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/our_menu/pizza4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/our_menu/pizza5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/our_menu/rice1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/our_menu/romashka.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/our_menu/salat1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/our_menu/salat2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/our_menu/salat3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/our_menu/salat4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/our_menu/salat5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/our_menu/tefteli.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/pratiksha-mohanty-V0xp-dTS3z0-unsplash.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/products/ananas.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/products/avokado.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/products/baklajan.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/products/bazilik.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/products/becon.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/products/buriak.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/products/capersi.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/products/capusta.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/products/cheri.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/products/cucurudza.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/products/curca_gril.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/products/curiatina.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/products/feta.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/products/file_ruba.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/products/grechka.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/products/griby.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/products/iabluko.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/products/kabachok.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/products/kartoplia.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/products/kislo-solodkui.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/products/kivi.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/products/lemon.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/products/losos.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/products/maslin.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/products/mayonez.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/products/mix_salativ.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/products/morcva.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/products/moreproduct.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/products/mozarella.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/products/na_grily.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/products/ogirok.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/products/olia_olivkova.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/products/olia_son.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/products/osnova_olia.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/products/papric.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/products/parmezan.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/products/pasta.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/products/pechinka.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/products/perets.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/products/pomidor.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/products/ricotta.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/products/rucola.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/products/rys.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/products/saliami.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/products/shinka.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/products/sirniy_sous.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/products/smazhyty.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/products/smetana.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/products/sous_gril.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/products/spetsii.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/products/svinina.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/products/syr.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/products/tartar.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/products/tomatna_osnova.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/products/tomatna_pasta.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/products/tsibulia.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/products/tunets.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/products/varyty.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/products/vershki_sous.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/products/yaitsi.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/products/yalovichina.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/products/yazik.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/products/zapicat.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/relax.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/restourant.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/slide_avocado.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/slide_carrot.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/slide_lemon.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/slide_onion.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/slide_pepper.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/slide_tomato.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/text1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/layout/footer.php" beforeDir="false" afterPath="$PROJECT_DIR$/layout/footer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/layout/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/layout/header.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/layout/right_menu.php" beforeDir="false" afterPath="$PROJECT_DIR$/layout/right_menu.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/about.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/about.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/constructure.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/constructure.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/login.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/logout.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/logout.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/main.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/main.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/newdish.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/order.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/order_successful.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/our_menu.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/registration.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/registration_successful.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/shopping_cart.php" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectId" id="1m44MdPBpekvwGD8PEbqAkC4bsM" />
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="29Yvb0dXyfEPW3JEzzTIjhX21Cx" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Ad/Advertising" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="f9ff3e9b-2288-4076-9025-ceca166e969c" name="Default Changelist" comment="" />
-      <created>1608739491599</created>
+      <changelist id="f6597362-8913-41c0-be69-c327fdcdf543" name="Changes" comment="" />
+      <created>1653302901130</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1608739491599</updated>
+      <updated>1653302901130</updated>
+      <workItem from="1653302902473" duration="14797000" />
     </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

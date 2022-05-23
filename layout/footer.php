@@ -1,7 +1,7 @@
 <footer class="page-footer">
   <div class="container-fluid">
     <div class="row">
-  <h3>© 2020.</h3>
+  <h3>© 2022.</h3>
 </div></div>
 </footer>
 <script src="jquery-3.5.1.min.js"></script>

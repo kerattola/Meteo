@@ -1,135 +1,95 @@
+<?php
+  $servername = "localhost";
+  $database = "meteo_db";
+  $username = "root";
+  $password = "";
+?>
+
 <form action="index.php?action=constructure" method="POST">
     <a name="constructure"></a>
     <div class="container">
-     <?php
-  $cook_id=0;
-  $servername = "localhost";
-  $database = "atm_teamdb";
-  $username = "root";
-  $password = "";
-        $conn3 = mysqli_connect($servername,$username,$password,$database);
-        mysqli_set_charset($conn3, 'utf8');
-        if (!$conn3) {
-      die("Connection failed: " . mysqli_connect_error());
+  <p>Заповніть Дані метеостанції</p>
+        <p>1 - номер міста Чернівці</p>
+        <p>2 - номер міста Львів</p>
+        <p>3 - номер міста Київ</p>
+    <hr>
+        <label for="name"><b>Місто</b></label>
+        <input type="text" placeholder="Введіть номер міста" name="id_region" required>
+        <br>
+
+        <label for="year"><b>Рік</b></label>
+        <input type="text" placeholder="Введіть рік" name="year" required>
+        <br>
+
+        <label for="type"><b>Місяць</b></label>
+        <input type="text" placeholder="Введіть місяць" name="month" required>
+        <br>
+
+        <label for="price"><b>День</b></label>
+        <input type="text" placeholder="Введіть день" name="day" required>
+        <br>
+
+        <label for="price"><b>Температура</b></label>
+        <input type="text" placeholder="Введіть температуру" name="temperature" required>
+        <br>
+
+        <label for="price"><b>Тиск</b></label>
+        <input type="text" placeholder="Введіть тиск" name="pressure" required>
+        <br>
+
+        <label for="price"><b>Вологість повітря</b></label>
+        <input type="text" placeholder="Введіть вологість повітря" name="humidity" required>
+        <br>
+
+        <label for="price"><b>Швидкість вітру</b></label>
+        <input type="text" placeholder="Введіть швидкість вітру" name="wind_speed" required>
+        <br>
+
+        <label for="price"><b>Опади</b></label>
+        <input type="text" placeholder="Введіть кількість опадів" name="precipitation" required>
+        <br>
+
+        <hr>
+
+        <button type="submit" class="registerbtn">Додати дані</button>
+        <?php if(!empty($_POST)) {
+
+                $conn = mysqli_connect($servername,$username,$password,$database);
+                mysqli_set_charset($conn, 'utf8');
+                if (!$conn) {
+                    die("Connection failed: " . mysqli_connect_error());
+                }
+
+                else{
+                    $id_region=$_POST["id_region"];
+                    $year=$_POST["year"];
+                    $month=$_POST["month"];
+                    $day=$_POST["day"];
+                    $temperature=$_POST["temperature"];
+                    $pressure=$_POST["pressure"];
+                    $humidity=$_POST["humidity"];
+                    $wind_speed=$_POST["wind_speed"];
+                    $precipitation=$_POST["precipitation"];
+
+
+                    $sql2 = "INSERT INTO date_time (year, month ,day ) VALUES ('$year','$month','$day')";
+                    $sql = "SELECT @@identity;";
+                    $result = mysqli_query($conn, $sql2) or die("Error " . mysqli_error($conn));
+                    $get_id = mysqli_query($conn, $sql) or die("Error " . mysqli_error($conn));
+                    if($result && $get_id)
+                    {
+                        while ($row = mysqli_fetch_row($get_id)) {
+                            $id_time = $row[0];
+                        }
+                        mysqli_free_result($get_id);
                     }
+                    $sql3 = "INSERT INTO meteo (id_region, id_time, temperature, pressure, humidity, wind_speed, precipitation) VALUES ('$id_region', '$id_time ', '$temperature', '$pressure', '$humidity','$wind_speed','$precipitation')";
+                    $result = mysqli_query($conn, $sql3) or die("Error " . mysqli_error($conn));
+                    mysqli_close($conn);
+                }
 
-else{
-  
-  echo '<h4><p>Виберіть страву, яку хочете скласти в конструкторі</p></h4>
-       <div class = "row">';
+        }
 
-    $type_dish= "SELECT * FROM type_dish";
-    $res_type = $conn3->query($type_dish);
-       while ($row =$res_type ->fetch_assoc()) {
-          echo '<div class = "col-lg-4 col-md-4 col-sm-4">';
-          echo '<input type="radio" id= "'.$row["id"].']" name="typedish" value= "'.$row["id"].'">
-          <label class="log" for="'.$row["id"].'">'.$row["name"].'</label>';
-          echo '</div><br>';
-       }
-  echo '</div><br><br>';
-
-    
-    $query3 = "SELECT * FROM products";
-    $result3 = $conn3->query($query3);
-   
-   $r1 = '<div class = "row">';
-   echo $r1;
-  while ($row =$result3->fetch_assoc()) {
- 
-        echo '<div class = "col-lg-3 col-md-3 col-sm-6">
-              <div class = "test"><div class="zoom">
-              <img class = "imgcard" src="/pal_ker_kla/img/products/'.$row["image"].'" style="width:270px;height:180px;">'.'<p>'.$row["title"].'</p></div><p>'.$row["price"].'</p>'.'<label class="switch"><input type="checkbox" name="prod_list[]" value="'.$row["product_id"].'"><span class="slider"></span></label></div></div>';
-  
-  if ($row["product_id"]%4==0){
-    echo '</div><p></p><div class = "row">';
-      }
-}
-echo '<br></div><br><h4><p>Виберіть Спосіб приготування</p></h4>
-           <div class = "row">';
-          $type_cook= "SELECT * FROM type_cooking";
-          $res_cook = $conn3->query($type_cook);
-       while ($row =$res_cook ->fetch_assoc()) {
-          
-          echo '<div class = "col-lg-3 col-md-3 col-sm-6">
-                <div class = "testsmal"><div class="zoom">
-                <img class = "imgcard" src="/pal_ker_kla/img/products/'.$row["image"].'" style="width:150px;height:100px;">'.'<p>'.$row["method"].'</p></div><p>'.$row["price"].'</p>'.'<input type="radio" id= "'.$row["id"].']" name="typecook" value= "'.$row["id"].'">
-          <label class="log" for="'.$row["id"].'"></label></div></div>';
-          
-       }
-       echo '</div><br>'; 
-
-$perevirka=0;
-if(isset($_POST['typedish'])){
-        $typ_id = (int)$_POST['typedish'];
-        $perevirka=$perevirka+1;
-      }
-
-if(isset($_POST['typecook'])){
-        $cook_id = (int)$_POST['typecook'];
-        $perevirka=$perevirka+1;
-      }
-
-if(!empty($_POST['prod_list'])) {
-  $produ=array();
-  $sumprice=0;
-    foreach($_POST['prod_list'] as $check) {
-      array_push($produ, $check);
-    }
-$testtry= "SELECT * FROM products WHERE product_id IN (" . implode(',', $produ) . ")";
-$tryres = $conn3->query($testtry);
-       while ($row =$tryres ->fetch_assoc()) {
-         $sumprice = $sumprice + (int)$row["price"];
-         }
-   $perevirka=$perevirka+1;
-}
-
-if($perevirka<3 && isset($_POST['typedish']) && !empty($_POST['prod_list'])){
-   $indish = "INSERT INTO `dish`(`type`, `price`) VALUES ('$typ_id','$sumprice')";
-   $dishfind = "SELECT @@identity;";
-        $indo1 = mysqli_query($conn3, $indish) or die("Ошибка " . mysqli_error($conn3)); 
-        $indo2 = mysqli_query($conn3, $dishfind) or die("Ошибка " . mysqli_error($conn3));
-      if($indo1 && $indo2)
-    {
-        while ($row = mysqli_fetch_row($indo2)) {
-            $myid_dish =$row[0]; 
-          }
-     $_SESSION['newdish'] =$myid_dish; 
-    mysqli_free_result($indo2);
-    }
-
-foreach($produ as $id) {
-$inprodish = "INSERT INTO `prod_dish`(`product_id`, `dish_id`) VALUES ('$id','$myid_dish')";
-$resofdish = mysqli_query($conn3, $inprodish) or die("Ошибка " . mysqli_error($conn3)); 
-}
-}
-else if($perevirka==3){
-  $indish = "INSERT INTO `dish`(`type`, `price`, `cook_method`) VALUES ('$typ_id','$sumprice','$cook_id')";
-   $dishfind = "SELECT @@identity;";
-        $indo1 = mysqli_query($conn3, $indish) or die("Ошибка " . mysqli_error($conn3)); 
-        $indo2 = mysqli_query($conn3, $dishfind) or die("Ошибка " . mysqli_error($conn3));
-      if($indo1 && $indo2)
-    {
-        while ($row = mysqli_fetch_row($indo2)) {
-            $myid_dish =$row[0]; 
-          }
-     $_SESSION['newdish'] =$myid_dish; 
-    mysqli_free_result($indo2);
-    }
-
-foreach($produ as $id) {
-$inprodish = "INSERT INTO `prod_dish`(`product_id`, `dish_id`) VALUES ('$id','$myid_dish')";
-$resofdish = mysqli_query($conn3, $inprodish) or die("Ошибка " . mysqli_error($conn3)); 
-}
-}
-
-echo '<button type="submit" class="buttondish" name="new">Зібрати страву</button>';
-
-if(isset($_POST['new']) && $perevirka>=2 && isset($_POST['typedish']) && !empty($_POST['prod_list'])){
- echo '<script>location.replace("http://localhost/pal_ker_kla/index.php?action=newdish");</script>';
-  }
-    mysqli_close($conn3);
-  }
-
-?>
+        ?>
 </div>
  </form>

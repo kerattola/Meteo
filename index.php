@@ -8,7 +8,7 @@ $file = './views/'.$_GET['action'].'.php';
 
 if (file_exists($file)) {
 	require_once $file;
-	if (($file != './views/login.php')&&($file != './views/registration.php')&&($file != './views/newdish.php')) {
+	if ($file != './views/login.php') {
 		require_once ("./layout/footer.php");
     }
 }

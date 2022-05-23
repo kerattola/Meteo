@@ -18,23 +18,12 @@
       </li>
       <li class="nav-item">
         <button class="glow-on-hover" type="button">
-      <a  class="nav-link" href="index.php?action=about"><p>Про нас</p></a>
-    </button>
-      </li>
-      <li class="nav-item">
-        <button class="glow-on-hover" type="button">
-      <a class="nav-link" href="index.php?action=our_menu"><p>Наше меню</p></a>
+      <a  class="nav-link" href="index.php?action=about"><p>Дані метеостанції</p></a>
     </button>
       </li>
 
 <?php  
 if(!isset($_SESSION['login']) and empty($_SESSION['login'])) {
-echo "<li class='nav-item'>
-<button class='glow-on-hover' type='button'>
-      <a class='nav-link' href='index.php?action=registration'><p>Реєстрація</p></a>
-      </button>
-      </li>";
-
 echo "<li class='nav-item'>
 <button class='glow-on-hover' type='button'>
       <a class='nav-link' href='index.php?action=login'><p>Вхід</p></a>
@@ -44,7 +33,7 @@ echo "<li class='nav-item'>
 else{
 echo "<li class='nav-item'>
 <button class='glow-on-hover' type='button'>
-      <a class='nav-link' href='index.php?action=constructure'><p>Склади страву</p></a>
+      <a class='nav-link' href='index.php?action=constructure'><p>Додати дані</p></a>
       </button>
       </li>";
 
@@ -53,14 +42,8 @@ echo "<li class='nav-item'>
       <a class='nav-link' href='index.php?action=logout'><p>Вихід</p></a>
       </button>
       </li>";
-echo "<li class='nav-item'>
- <button class='glow-on-hover' type='button'>
-      <a class='nav-link' href='index.php?action=shopping_cart'><p>Корзина</p></a>
-       </button>
-       </li>";
 }
 ?>
-
      </ul>
    </div>
       </nav>

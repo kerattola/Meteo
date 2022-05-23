@@ -1,27 +1,85 @@
+<form action="index.php?action=about" method="POST">
+    <a name="about"></a>
  <div class="container">
-<img class="img11" src="/pal_ker_kla/img/about1.png">
+     <?php
+     $servername = "localhost";
+     $database = "meteo_db";
+     $username = "root";
+     $password = "";
+     $conn3 = mysqli_connect($servername,$username,$password,$database);
+     mysqli_set_charset($conn3, 'utf8');
+     if (!$conn3) {
+         die("Connection failed: " . mysqli_connect_error());
+     }
 
-<div class="card1" alt="about"><a name="about"> Вишукані страви італійської, американської та української  кухонь. Людина ,яка відвідає наш сайт зможе 
-      побувати у будь-якій країні ,яку обере. Склавши піцу ви зможете відчути нотки Італії в кожному шматочку. А самостійно склавши салат є можливість відвідати самі потаємні місця Греції,
-     Іспанії, Франції.  Можливо саме ти нащадок великих кулінарів минулого, і зможеш створити райську насолоду майбутнього. 
- </a></div> <br>
-<img class="img11" src="/pal_ker_kla/img/about2.jpg">
-		<div class="card1"> <br>
-			І ким б ти не був : лікарем , продавцем, актором чи навіть 
-	 космонавтом , час спробувати щось нове. Щомісяця проводяться кулінарні фестивалі і майстер-класи наших шеф-кухарів - це гостинний світ смачної їжі і приємного відпочинку!  Все, що потрібно зробити - це обрати зі списку продукти, які на вашу думку, будуть найкраще  поєднуватися
-	</div> <br><br>
-		  <img class="img11" src="/pal_ker_kla/img/about3.jpg">
-		<div class="card1"><br> 
-			Жан-Люк Телье, шеф-кухар , поєднує в своїй кухні чарівність  старовинних традицій з оригінальним підходом в кулінарі. Безліччю слів можна описати цього кухаря, який готує
-		  з любов'ю, що вкладає все своє серце і весь  багаторічний досвід в свою роботу. Ніколи не переставати вчитися новому - в цьому секрет його успіху. 
-      У ресторані  шеф-кухар запропонує вам вишукану кухню з поєднанням самих традиційних смаків, але з оригінальним підходом, ретельне приготування при низькій температурі,
-	  що додає блюдам неповторний смак, під впливом часу року і творчого натхнення ... яке піднесе вас до самих вершин гастрономічного задоволення.
-			  </div> 
-<div class="card2">
-    <p> Можна робити замовленння онлайн, або за телефоном :</p>
-	<p> +380983425611</p>
-	<p> Наша адреса: вул. Кобилянська, 3 ; м.Чернівці, 58000</p>
+     else{
+         echo '<h4><p>Виберіть місто, прогноз якого бажаєте переглянути</p></h4>
+       <div class = "row">';
+         $type_dish= "SELECT * FROM region";
+         $res_type = $conn3->query($type_dish);
+         while ($row =$res_type ->fetch_assoc()) {
+             echo '<div class = "col-lg-4 col-md-4 col-sm-4">
+                <div class = "testsmal"><div class="zoom">
+                <img class = "imgcard" src="/meteo/img/'.$row["region_title"].'.png" style="width:150px;height:100px;">'.'<p>'.$row["region_title"].'</p></div>'.'<input type="radio" id= "'.$row["id_region"].']" name="region" value= "'.$row["id_region"].'">
+          <label class="log" for="'.$row["id_region"].'"></label></div></div>';
+         }
+         echo '</div><br>';
+         echo '<p><button type="submit" class="buttondish" name="new">Вибрати місто</button></p><br>';
+
+             if(isset($_POST['new']) && isset($_POST['region'])){
+                 $reg = $_POST['region'];
+
+                  $query3 = "SELECT * FROM meteo WHERE id_region = $reg";
+
+                  $result3 = $conn3->query($query3);
+
+                  echo("<table>");
+                   echo "<th>";echo "Date"; echo "</th>";
+                   echo "<th>";echo "Temperature"; echo "</th>";
+                   echo "<th>";echo "Pressure"; echo "</th>";
+                   echo "<th>";echo "Humidity"; echo "</th>";
+                   echo "<th>";echo "Wind speed"; echo "</th>";
+                   echo "<th>"; echo "Precipitation"; echo "</th>";
+
+                 echo "<tr>";
+
+
+                   while ($row =$result3->fetch_assoc()) {
+                       $id_t = $row["id_time"];
+                       $query4 = "SELECT * FROM date_time WHERE id_time = $id_t";
+                       $result4 = $conn3->query($query4);
+                       echo "<td>";
+                       echo("<table>");
+                               echo "<th>";
+                               echo "Day"; echo "</th>";
+                               echo "<th>";
+                               echo "Month"; echo "</th>";
+                               echo "<th>";
+                               echo "Year"; echo "</th>";
+                       while ($row1 =$result4->fetch_assoc()) {
+                               echo "<tr>";
+                               echo "<td>";
+                               echo $row1["day"]; echo "</td>";
+                               echo "<td>";
+                               echo $row1["month"]; echo "</td>";
+                               echo "<td>";
+                               echo $row1["year"]; echo "</td>";
+                               echo "</tr>";
+                       }
+                       echo("</table>");
+                       echo "</td>";
+                       echo "<td>";echo $row["temperature"]; echo "</td>";
+                       echo "<td>";echo $row["pressure"]; echo "</td>";
+                       echo "<td>";echo $row["humidity"]; echo "</td>";
+                       echo "<td>";echo $row["wind_speed"]; echo "</td>";
+                       echo "<td>";echo $row["precipitation"]; echo "</td>";
+                       echo "</tr>";
+                }
+                echo("</table>");
+             }
+}
+     mysqli_close($conn3);
+
+     ?>
 </div>
-			 
-<iframe  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2654.6008057921104!2d25.93376571565436!3d48.291295279235925!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47340899e51687cf%3A0xba650291ea227fb4!2z0YPQuy4g0JrQvtCx0YvQu9GP0L3RgdC60L7QuSwgMywg0KfQtdGA0L3QvtCy0YbRiywg0KfQtdGA0L3QvtCy0LjRhtC60LDRjyDQvtCx0LvQsNGB0YLRjCwgNTgwMDA!5e0!3m2!1sru!2sua!4v1603816966318!5m2!1sru!2sua"  width="600" height="350" frameborder="0" style="border:0;  " allowfullscreen="" tabindex="0"></iframe> 
-</div>
+</form>

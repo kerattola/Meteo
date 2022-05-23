@@ -1,40 +1,22 @@
  <a name="home"></a>
 <div class="containerimage">
   <div class="box">
-    <img src="/pal_ker_kla/img/slide_avocado.jpg">
-    <span><p>Прояви</p></span>
+    <img src="/meteo/img/1.png">
   </div>
   <div class="box">
-    <img src="/pal_ker_kla/img/slide_carrot.jpg">
-    <span><p>фантазію -</p></span>
+    <img src="/meteo/img/2.png">
   </div>
   <div class="box">
-    <img src="/pal_ker_kla/img/slide_lemon.jpg">
-    <span><p>будь</p></span>
+    <img src="/meteo/img/3.png">
   </div>
   <div class="box">
-    <img src="/pal_ker_kla/img/slide_tomato.jpg">
-    <span><p>автором</p></span>
+    <img src="/meteo/img/4.png">
   </div>
   <div class="box">
-    <img src="/pal_ker_kla/img/slide_onion.jpg">
-    <span><p>свого</p></span>
-  </div>
-  <div class="box">
-    <img src="/pal_ker_kla/img/slide_pepper.jpg">
-    <span><p>обіду</p></span>
+    <img src="/meteo/img/5.png">
   </div>
 </div>
 
 <?php 
-  
-  /*if(isset($_SESSION['login']) and !empty($_SESSION['login'])) {
-
-   $s=''; $s=$_SESSION['login'];
-   $q=''; $q=$_SESSION['id'];
-   $e=''; $e=$_SESSION['neworder'];
-   echo "You entered as \n"; echo ($s); echo("<br>"); echo ($q);
-   echo "Your order: \n"; echo ($e);echo("\n");
-}*/
 
    ?>
