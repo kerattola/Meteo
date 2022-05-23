@@ -35,11 +35,11 @@
 
                   echo("<table>");
                    echo "<th>";echo "Date"; echo "</th>";
-                   echo "<th>";echo "Temperature"; echo "</th>";
-                   echo "<th>";echo "Pressure"; echo "</th>";
-                   echo "<th>";echo "Humidity"; echo "</th>";
-                   echo "<th>";echo "Wind speed"; echo "</th>";
-                   echo "<th>"; echo "Precipitation"; echo "</th>";
+                   echo "<th>";echo "Temperature °С"; echo "</th>";
+                   echo "<th>";echo "Pressure Н/m²"; echo "</th>";
+                   echo "<th>";echo "Humidity %"; echo "</th>";
+                   echo "<th>";echo "Wind speed m/sec"; echo "</th>";
+                   echo "<th>"; echo "Precipitation mm"; echo "</th>";
 
                  echo "<tr>";
 

@@ -30,23 +30,23 @@
                 <input type="text" placeholder="Введіть день" name="day" required>
             </div>
             <div class="adding__inner">
-                <label for="price"><b>Температура</b></label>
+                <label for="price"><b>Температура °С</b></label>
                 <input type="text" placeholder="Введіть температуру" name="temperature" required>
             </div>
             <div class="adding__inner">
-                <label for="price"><b>Тиск</b></label>
+                <label for="price"><b>Тиск 	Н/м²</b></label>
                 <input type="text" placeholder="Введіть тиск" name="pressure" required>
             </div>
             <div class="adding__inner">
-                <label for="price"><b>Вологість повітря</b></label>
+                <label for="price"><b>Вологість повітря %</b></label>
                 <input type="text" placeholder="Введіть вологість повітря" name="humidity" required>
             </div>
             <div class="adding__inner">
-                <label for="price"><b>Швидкість вітру</b></label>
+                <label for="price"><b>Швидкість вітру м/сек</b></label>
                 <input type="text" placeholder="Введіть швидкість вітру" name="wind_speed" required>
             </div>
             <div class="adding__inner">
-                <label for="price"><b>Опади</b></label>
+                <label for="price"><b>Опади мм</b></label>
                 <input type="text" placeholder="Введіть кількість опадів" name="precipitation" required>
             </div>
             <hr>
