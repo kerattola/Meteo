@@ -34,12 +34,12 @@
                   $result3 = $conn3->query($query3);
 
                   echo("<table>");
-                   echo "<th>";echo "Date"; echo "</th>";
-                   echo "<th>";echo "Temperature °С"; echo "</th>";
-                   echo "<th>";echo "Pressure Н/m²"; echo "</th>";
-                   echo "<th>";echo "Humidity %"; echo "</th>";
-                   echo "<th>";echo "Wind speed m/sec"; echo "</th>";
-                   echo "<th>"; echo "Precipitation mm"; echo "</th>";
+                   echo "<th class = 'main_th'>";echo "Дата"; echo "</th>";
+                   echo "<th class = 'main_th'>";echo "Tемпература °С"; echo "</th>";
+                   echo "<th class = 'main_th'>";echo "Тиск Н/m²"; echo "</th>";
+                   echo "<th class = 'main_th'>";echo "Вологість %"; echo "</th>";
+                   echo "<th class = 'main_th'>";echo "Швидкість вітру m/sec"; echo "</th>";
+                   echo "<th class = 'main_th'>"; echo "Опади mm"; echo "</th>";
 
                  echo "<tr>";
 
@@ -51,11 +51,11 @@
                        echo "<td>";
                        echo("<table>");
                                echo "<th>";
-                               echo "Day"; echo "</th>";
+                               echo "День"; echo "</th>";
                                echo "<th>";
-                               echo "Month"; echo "</th>";
+                               echo "Місяць"; echo "</th>";
                                echo "<th>";
-                               echo "Year"; echo "</th>";
+                               echo "Рік"; echo "</th>";
                        while ($row1 =$result4->fetch_assoc()) {
                                echo "<tr>";
                                echo "<td>";

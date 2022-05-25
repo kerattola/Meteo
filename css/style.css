@@ -70,8 +70,6 @@ p{
     text-align: right;
 
 }
-
-
 footer {
     padding: 30px;
     text-align: center;
@@ -493,18 +491,18 @@ table {
   border-collapse: collapse;
   width: 100%;
 }
-
 td, th {
     border: 1px solid #555;
     text-align: left;
     padding: 8px;
-
 }
-
+.main_th {
+    position: sticky;
+    top: 0;
+}
 th {
     background-color: #f2601d;
 }
-
 tr {
     background-color: #ffd2bd;
 }
