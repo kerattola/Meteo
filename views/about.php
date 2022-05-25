@@ -36,10 +36,10 @@
                   echo("<table>");
                    echo "<th class = 'main_th'>";echo "Дата"; echo "</th>";
                    echo "<th class = 'main_th'>";echo "Tемпература °С"; echo "</th>";
-                   echo "<th class = 'main_th'>";echo "Тиск Н/m²"; echo "</th>";
+                   echo "<th class = 'main_th'>";echo "Тиск Н/м²"; echo "</th>";
                    echo "<th class = 'main_th'>";echo "Вологість %"; echo "</th>";
-                   echo "<th class = 'main_th'>";echo "Швидкість вітру m/sec"; echo "</th>";
-                   echo "<th class = 'main_th'>"; echo "Опади mm"; echo "</th>";
+                   echo "<th class = 'main_th'>";echo "Швидкість вітру м/сек"; echo "</th>";
+                   echo "<th class = 'main_th'>"; echo "Опади мм"; echo "</th>";
 
                  echo "<tr>";
 
